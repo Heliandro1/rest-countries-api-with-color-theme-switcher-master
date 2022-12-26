@@ -1,0 +1,5 @@
+@media only screen and (min-width: 992px) {
+    nav:not(div.filter-container > nav){
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap'); 
+*{
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0em;
+    margin: 0em;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+body, html{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: hsl(0, 0%, 98%);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: hsl(0, 0%, 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4em;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+header button#btnDarkMode{
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    font-weight: 800;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-width: 7em;
+}
+main{
+    min-width: 100%;
+    height: calc(100% - 4em);
+    padding-top: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav:not(div.filter-container > nav){
+    height: 7em;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+}
+nav > div.search{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    height: 2.5em;
+    width: 12em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: hsl(0, 0%, 52%);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+input[type="search"]{
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-height: 2.5em;
+}
+div.filter-container{
+    width: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+div.filter-container > nav{
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    font-size: 0.5rem;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+@keyframes slideDown {
+    from{height: 0px;}
+    to{height: 197px; display: flex;}
+}
+@keyframes slideUp {
+    from{height: 197px;}
+    to{height: 0px; display: none;}
+}
+button#btnFilter{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border: none;
+    min-height: 3em;
+    width: 100%;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+div.filter-container > nav > a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+    height: 2.5em;
+    width: 100%;
+    display: flex;
+    text-indent: 1.5rem;
+    align-items: center;
+}
