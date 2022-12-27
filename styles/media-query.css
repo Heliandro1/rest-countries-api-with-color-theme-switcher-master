@@ -1,5 +1,19 @@
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1036px) {
     nav:not(div.filter-container > nav){
         flex-direction: row;
+        justify-content: space-between;
+        height: 3em;
+    }
+    section.countries-cards{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2.8em;
+        gap: 4em;
+    }
+    nav > div.search{
+        width: 20em;
+    }
+    input[type="search"]{
+        width: 20em;
     }
 }
