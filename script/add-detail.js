@@ -4,15 +4,19 @@ async function handleCardClick() {
         const countryName = this.children.item(1).children.item(0);
         const res = await fetch(`https://restcountries.com/v3.1/name/${countryName.innerText}?fullText=true`);
         const data = await res.json();
-        console.log(data);
-        createDetailPage(data[0].flags.svg, data[0].name.common, null, Number(data[0].population).toLocaleString('en-us'), data[0].region, data[0].subregion, data[0].capital, data[0].tld, Object.values(data[0].currencies), Object.values(data[0].languages), data[0]);
-        console.log()
+        createDetailPage(data[0].flags.svg, data[0].name.common, 
+            Object.values(data[0].name.nativeName)['0'].common, 
+            Number(data[0].population).toLocaleString('en-us'), 
+            data[0].region, data[0].subregion, data[0].capital, 
+            data[0].tld, Object.values(data[0].currencies), 
+            Object.values(data[0].languages), data[0]
+        );
     } catch (err) {
         const sect = document.querySelector("section.countries-cards");
         sect.innerHTML = `<p style="text-align: center; width: 100%;">An error occured while fetching...Please check your internet connection and reload the page</p>`
     }
 }
-function createDetailPage(bckImg, name, natName, population, region, subreg, capital, tld, curr, lang, obj) {
+async function createDetailPage(bckImg, name, natName, population, region, subreg, capital, tld, curr, lang, obj) {
     let currencies = '';
     for (let index = 0; index < curr.length; index++) {
         if(!(index == curr.length - 1))
@@ -47,26 +51,26 @@ function createDetailPage(bckImg, name, natName, population, region, subreg, cap
     </div>
     <div class="others-details">
         <p>Top level domain: <span>${tld}</span></p>
-        <p>Currecies: <span>${currencies}</span></p>
+        <p>Currencies: <span>${currencies}</span></p>
         <p>Languages: <span>${lang.toString().replace(/[,]/g, `, `)}</span></p>
     </div>`;
     if (obj.hasOwnProperty("borders")) {
-        let bcountries = ` <div class="b-countries">
-        <p><strong>Border Countries:</strong></p>`;
-        obj.borders.forEach(element => {
-            fetch(`https://restcountries.com/v3.1/name/${element}`)
-            .catch( bcountries += `<div>failed to fetch</div>`)
-            .then(res => res.json())
-            .then(res => console.log(res))
-            
-            
-        });
+        let bcountries = `<div class="b-countries">
+            <p><strong>Border Countries:</strong></p>`;
+        try{ 
+            for (const iterator of obj.borders) {
+                const res = await fetch(`https://restcountries.com/v3.1/alpha/${iterator}`);
+                const data = await res.json();
+                bcountries += `<div>${data[0].name.official}</div>`;
+            }
+        }catch{
+            bcountries += `<div>failed to fetch</div>`;
+        }
         bcountries += `</div>`;
         sect.innerHTML += bcountries;
     }
     handleBtnBackClick();
 }
-
 function handleBtnBackClick() {
     const btn = document.querySelector("div.back");
     const nav = document.querySelector("main > nav");

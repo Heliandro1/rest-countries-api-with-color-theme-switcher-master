@@ -5,19 +5,19 @@
     margin: 0em;
     box-sizing: border-box;
     font-size: 1.1rem;
-    color: hsl(200, 15%, 8%);
+    color: hsl(0, 0%, 100%);
 }
 body, html{
     min-height: 100vh;
     min-width: 100%;
-    background-color: hsl(0, 0%, 98%);
+    background-color: hsl(207, 26%, 17%);
 }
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,7 +26,7 @@ header{
 }
 header button#btnDarkMode{
     border: none;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     font-weight: 800;
     font-size: 0.8rem;
     display: flex;
@@ -54,7 +54,7 @@ nav:not(div.filter-container > nav){
     gap: 1em;
 }
 nav > div.search{
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border-radius: 5px;
     height: 2.5em;
     width: 12em;
@@ -62,7 +62,6 @@ nav > div.search{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    color: hsl(0, 0%, 52%);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 input[type="search"]{
@@ -70,6 +69,10 @@ input[type="search"]{
     font-size: 0.8rem;
     font-weight: 600;
     min-height: 2.5em;
+    background-color: hsl(209, 23%, 22%);
+}
+input[type="search"]::placeholder{
+    color: hsl(0, 0%, 100%);
 }
 div.filter-container{
     width: 12em;
@@ -82,7 +85,7 @@ div.filter-container{
 }
 div.filter-container > nav{
     width: 100%;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border-radius: 5px;
     font-size: 0.5rem;
     position: relative;
@@ -100,7 +103,7 @@ div.filter-container > nav{
     to{height: 0px; display: none;}
 }
 button#btnFilter{
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border-radius: 5px;
     border: none;
     min-height: 3em;
@@ -115,7 +118,6 @@ button#btnFilter{
 }
 div.filter-container > nav > a{
     text-decoration: none;
-    color: black;
     font-size: 0.9rem;
     height: 2.5em;
     width: 100%;
@@ -181,7 +183,7 @@ div.dot:nth-child(5){
 div.card{
     height: auto;
     width: 13em;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -255,7 +257,7 @@ div.b-countries > div{
     align-items: center;
     min-width: 10em;
     height: 2em;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     text-align: center;
@@ -268,7 +270,7 @@ div.back-container{
     justify-content: center;
 }
 div.back{
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border-radius: 2px;
     height: 2.3em;
     width: 8em;
@@ -281,7 +283,7 @@ div.back{
     cursor: pointer;
 }
 button#btnBack{
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(209, 23%, 22%);
     border: none;
     height: 2.3em;
     max-width: 8em;

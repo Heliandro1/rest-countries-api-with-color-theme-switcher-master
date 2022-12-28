@@ -1,7 +1,8 @@
 let btnFilter = document.querySelector("#btnFilter");
 let regions = document.querySelectorAll("nav > a");
 let searchField = document.querySelector("input[type='search']");
-
+const btnSwitchTheme = document.querySelector("#btnDarkMode");
+btnSwitchTheme.addEventListener("click", switchTheme);
 btnFilter.addEventListener("click", showDropDown);
 searchField.addEventListener("input", searchCountryByName);
 window.addEventListener("load", () =>{
@@ -10,6 +11,16 @@ window.addEventListener("load", () =>{
         iterator.addEventListener("click", getAllCountriesInfo);
     }
 });
+function switchTheme() {
+    const styles = document.querySelector("link#stylesheet");
+    if (styles.dataset.theme == 'light') {
+        styles.setAttribute('href', 'styles/dark-mode.css');
+        styles.dataset.theme = 'dark';
+    }else{
+        styles.setAttribute('href', 'styles/style.css');
+        styles.dataset.theme = 'light';
+    }
+}
 function showDropDown() {
     const navOpt = document.querySelector("div.filter-container > nav");
     if (navOpt.style.display == '') {
