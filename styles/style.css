@@ -282,4 +282,5 @@ button#btnBack{
     border: none;
     height: 2.3em;
     max-width: 8em;
+    cursor: pointer;
 }

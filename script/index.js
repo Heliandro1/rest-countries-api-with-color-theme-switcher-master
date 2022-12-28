@@ -1,6 +1,6 @@
-const btnFilter = document.querySelector("#btnFilter");
-const regions = document.querySelectorAll("nav > a");
-const searchField = document.querySelector("input[type='search']");
+let btnFilter = document.querySelector("#btnFilter");
+let regions = document.querySelectorAll("nav > a");
+let searchField = document.querySelector("input[type='search']");
 
 btnFilter.addEventListener("click", showDropDown);
 searchField.addEventListener("input", searchCountryByName);
@@ -89,6 +89,10 @@ async function searchCountryByName() {
         }
         data = await res.json();
         addCards(createCountryCard, data);
+        const cards = document.querySelectorAll(".card");
+        for (const iterator of cards) {
+            iterator.addEventListener("click", handleCardClick);
+        }
     } catch (error) {
         const sect = document.querySelector("section.countries-cards");
         if (error.message.toLowerCase() == 'failed to fetch') {

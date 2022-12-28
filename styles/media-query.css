@@ -13,7 +13,7 @@
     section.countries-cards-grid{
         display: grid;
         grid-template: 15em auto /
-        30em auto auto;
+        30em 12em 12em;
         grid-template-areas: 'a1 a2 a3'
                             'a1 a4 a4';
         padding-top: 1em;
