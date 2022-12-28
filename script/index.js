@@ -42,7 +42,7 @@ function createCountryCard(name, population, region, capital, img) {
     div.append(divImg);
     div.innerHTML += `
     <div class="card-details">
-        <p id="countryName"><strong>${name}</strong></p>
+        <p><strong>${name}</strong></p>
         <div class="details">
             <p>Population: <span>${Number(population).toLocaleString('en-us')}</span></p>
             <p>Region: <span>${region}</span></p>
