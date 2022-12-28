@@ -10,6 +10,29 @@
         padding: 2.8em;
         gap: 4em;
     }
+    section.countries-cards-grid{
+        display: grid;
+        grid-template: 15em auto /
+        30em auto auto;
+        grid-template-areas: 'a1 a2 a3'
+                            'a1 a4 a4';
+        padding-top: 1em;
+        padding-left: 4em;
+    }
+    div.apresentation-flag-img{
+        height: 100%;
+        grid-area: a1;
+    }
+    div.apresentation-details{
+        grid-area: a2;
+    }
+    div.others-details{
+        grid-area: a3;
+    }
+    div.b-countries{
+        grid-area: a4;
+        width: 100%;
+    }
     nav > div.search{
         width: 20em;
     }
