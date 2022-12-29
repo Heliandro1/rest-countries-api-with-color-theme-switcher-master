@@ -144,8 +144,8 @@ div.spin-container{
     justify-content: center;
 }
 div.spinner{
-    width: 70px;
-    height: 70px;
+    min-width:10em;
+    min-height: 10em;
     position: relative;
 }
 div.dot{
@@ -213,10 +213,7 @@ div.card-details{
     justify-content: center;
     gap: 1em;
 }
-/* Jones Epalanga Pedro 2 subchefe /915 634 466 */
-/* div.card-details > p > strong{
-    text-overflow: clip;
-} */
+
 div.details > *, div.details > p *, div.apresentation-details > div > *, div.apresentation-details > div > p > *, div.others-details > *, div.others-details > p > *{
     font-size: 0.9rem;
 }

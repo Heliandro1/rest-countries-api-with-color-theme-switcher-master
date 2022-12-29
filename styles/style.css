@@ -46,7 +46,7 @@ main{
     align-items: center;
 }
 nav:not(div.filter-container > nav){
-    height: 7em;
+    max-height: 7em;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -142,8 +142,8 @@ div.spin-container{
     justify-content: center;
 }
 div.spinner{
-    width: 70px;
-    height: 70px;
+    min-width:10em;
+    min-height: 10em;
     position: relative;
 }
 div.dot{
