@@ -206,7 +206,7 @@ div.country-flag-img{
 }
 div.card-details{
     width: 80%;
-    height: 8em;
+    min-height: 8em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
